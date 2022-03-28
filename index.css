@@ -31,10 +31,9 @@ a {
 
 #main-content {
   box-sizing: border-box;
-  margin: 15vh 0;
-  padding: 0 6em 0 6em;
+  padding: 10vh 4em 10vh 6em;
   flex: 0 0 50%;
-  max-height: 85vh;
+  max-height: 100vh;
   overflow-y: auto;
 }
 
@@ -50,7 +49,7 @@ ol {
 
 .two-pane {
   display: flex;
-  min-height: 100vh;
+  max-height: 100vh;
   position: relative;
 }
 
@@ -58,6 +57,7 @@ ol {
   flex: 0 0 50%;
   max-height: 100vh;
   overflow-y: auto;
+  border-left: 2px solid rgba(169, 186, 164, 0.2);
 }
 
 @keyframes fadeIn {
@@ -72,7 +72,6 @@ ol {
   animation: fadeIn ease 2s;
   pointer-events: none;
   z-index: -1;
-  border-left: 2px solid rgba(169, 186, 164, 0.2);
 }
 
 .socials {
@@ -83,8 +82,7 @@ ol {
 
 #contexts {
   z-index: 1;
-  margin: 15vh 0;
-  padding: 0 6em 0 4em;
+  padding: 10vh 6em 10vh 4em;
 }
 
 #artifact-list {
@@ -108,6 +106,7 @@ ol {
 
 .drop > a {
   display: block;
+  opacity: 0.5;
 }
 
 .drop > h3 {
