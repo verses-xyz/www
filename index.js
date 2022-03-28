@@ -274,7 +274,7 @@ const makeMagicDiv = (artifactName) => (lineText) => {
 
   const dropDiv = document.getElementById(`drop_${artifactName}`)
   magic.addEventListener("mouseover", () => {
-       dropDiv.classList.add("highlight")
+    dropDiv.classList.add("highlight")
     const offset = dropDiv.offsetTop
     document.getElementById("context-pane").scrollTo({
       top: offset - 24, // add some extra viewing padding
