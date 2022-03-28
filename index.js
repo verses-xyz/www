@@ -112,15 +112,19 @@ function redrawCanvas() {
   animationFrameHandle = window.requestAnimationFrame(gameloop)
 }
 
-document.getElementById("context-pane").addEventListener("mousemove", function(e) {
-  const bounds = c.getBoundingClientRect()
-  x = Math.round((event.clientX - bounds.left) / cellSize) - 1
-  y = Math.round((event.clientY - bounds.top) / cellSize)
+function manuallySpawnCell(x, y) {
   const cell = Cell.get(x, y)
   cell.alive = true
   cell.age = 0
   cell.draw()
   cell.alive = true
+}
+
+document.getElementById("context-pane").addEventListener("mousemove", function(e) {
+  const bounds = c.getBoundingClientRect()
+  x = Math.round((event.clientX - bounds.left) / cellSize) - 1
+  y = Math.round((event.clientY - bounds.top) / cellSize)
+  manuallySpawnCell(x, y)
 })
 
 redrawCanvas()
