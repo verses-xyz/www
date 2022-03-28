@@ -30,6 +30,8 @@ a {
   margin: 15vh 0;
   padding: 0 6em 0 6em;
   flex: 0 0 50%;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 ol {
@@ -51,7 +53,7 @@ ol {
 #context-pane {
   flex: 0 0 50%;
   max-height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 @keyframes fadeIn {
@@ -69,7 +71,7 @@ ol {
   border-left: 2px solid rgba(169, 186, 164, 0.2);
 }
 
-#socials {
+.socials {
   opacity: 0.5;
   padding: 0;
   list-style: none;
@@ -87,7 +89,7 @@ ol {
   margin: 2em 0 0 -1em;
 }
 
-.date, #socials, a {
+.date, .socials, a {
   font-family: Roboto Mono, monospace;
   font-size: 1rem;
 }
@@ -144,3 +146,47 @@ ol {
   padding: 1em;
   border: 1px solid #0E202F; 
 }
+
+.mobile-only {
+  display: none;
+}
+
+@media only screen and (max-width: 780px) {
+  .two-pane {
+    flex-direction: column;
+  }
+
+  #canvas {
+    display: none;
+  }
+
+  #main-content {
+    margin: 5vh 0;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #contexts {
+    padding: 0 2em;
+    margin: 0 0;
+  }
+
+  #main-content {
+    padding: 0 2em;
+  }
+
+  #context-pane {
+    max-height: unset;
+    overflow-y: visible;
+  }
+}
+
+
