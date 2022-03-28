@@ -1,0 +1,146 @@
+html {
+  background-color: #e6e1d4;
+  scroll-behavior: smooth;
+}
+
+.noise-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: url("./assets/noise.png");
+  opacity: 0.3;
+}
+
+body {
+  font-family: "EB Garamond", serif;
+  font-size: 1.4rem;
+  margin: 0;
+  color: #0E202F;
+}
+
+a {
+  color: #0E202F;
+}
+
+#main-content {
+  box-sizing: border-box;
+  margin: 15vh 0;
+  padding: 0 6em 0 6em;
+  flex: 0 0 50%;
+}
+
+ol {
+  padding-left: 1.25em;
+}
+
+#main-logo {
+  height: 100px;
+  width: 100px;
+  margin: 2em 0;
+}
+
+.two-pane {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+#context-pane {
+  flex: 0 0 50%;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+#canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  animation: fadeIn ease 2s;
+  pointer-events: none;
+  z-index: -1;
+  border-left: 2px solid rgba(169, 186, 164, 0.2);
+}
+
+#socials {
+  opacity: 0.5;
+  padding: 0;
+  list-style: none;
+}
+
+#contexts {
+  z-index: 1;
+  margin: 15vh 0;
+  padding: 0 6em 0 4em;
+}
+
+#artifact-list {
+  list-style: none;
+  padding: 0;
+  margin: 2em 0 0 -1em;
+}
+
+.date, #socials, a {
+  font-family: Roboto Mono, monospace;
+  font-size: 1rem;
+}
+
+.drop {
+  margin: 3em 0;
+  padding: 1em;
+  border: 1px solid #00000000;
+  transition: border 2s ease;
+  border-radius: 5px;
+}
+
+.drop > a {
+  display: block;
+}
+
+.drop > h3 {
+  margin: 0.25em 0;
+}
+
+.date {
+  margin: 0;
+}
+
+#about {
+  margin: 2em 0;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.magic {
+  font-weight: bold;
+  background: linear-gradient(
+      90deg,
+      #0000 33%,
+      rgba(255, 255, 255, 0.2) 50%,
+      #0000 66%
+    )
+    #A9BAA4;
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s ease infinite;
+  cursor: pointer;
+}
+
+.highlight {
+  padding: 1em;
+  border: 1px solid #0E202F; 
+}
