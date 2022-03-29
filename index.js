@@ -25,7 +25,7 @@ class Cell {
 
   static get(x, y) {
     const i = x + (y * Math.ceil(w / cellSize))
-    return cells[i] 
+    return cells[i]
   }
 
   static isAlive(x, y) {
@@ -64,7 +64,7 @@ class Cell {
     this.alive = this.nextAlive
     const beingHovered = x == this.x && y == this.y
     if (this.alive || beingHovered) {
-      ctx.fillStyle = `rgba(169, 186, 164, ${Math.max(0, Math.pow(Math.E, -this.age / 2)) / 6})` 
+      ctx.fillStyle = `rgba(169, 186, 164, ${Math.max(0, Math.pow(Math.E, -this.age / 2)) / 6})`
       ctx.fillRect(this.x * cellSize, this.y * cellSize, cellSize, cellSize)
       // ctx.beginPath()
       // ctx.arc(this.x * cellSize + cellSize / 2, this.y * cellSize + cellSize / 2, cellSize / 2, 0, 2 * Math.PI, false)
@@ -129,6 +129,19 @@ document.getElementById("context-pane").addEventListener("mousemove", function(e
 
 redrawCanvas()
 window.addEventListener('resize', redrawCanvas)
+
+// artifact about
+const artifactAbout = document.getElementById("artifact-about")
+const artifactAboutText = createTelescopicTextFromBulletedList(`
+- We
+- believe in the value of speculative, experimental work that expands the bounds of collective possibility, imagination, and agency.
+  - aim to develop artifacts that combine philosophical and cultural work alongside technical tooling and infrastructure to advocate for new digital norms and practices. The majority of our work falls into these three (non-exclusive) categories:
+  - <ol><li>Artifacts as tools and infrastructure</li><li>Artifacts as statements</li><li>Artifacts as play or art</li></ol> 
+`, {
+  htmlContainerTag: "div",
+  textMode: "html",
+})
+artifactAbout.appendChild(artifactAboutText)
 
 // drops rendering
 const artifactList = document.getElementById("artifact-list")
@@ -217,24 +230,23 @@ drops.forEach(drop => {
   date.innerText = drop.date
   dropDiv.appendChild(date)
 
-  const title = document.createElement("h3")
-  title.innerText = drop.name
-  dropDiv.appendChild(title)
- 
   // slightly hacky way to indent all by one and add a 'Read more'
   const context = createTelescopicTextFromBulletedList(`
-- Read more about this artifact
+- <h3>${drop.name}</h3>
+  - <h3>${drop.name}</h3>
 ${drop.context.replace(/- /g, '  - ')}
-`)
+`, {
+    textMode: "html"
+  })
+
   dropDiv.appendChild(context)
-  
   drop.links.forEach(l => {
     const link = document.createElement("a")
-    link.href = l.href 
+    link.href = l.href
     link.innerHTML = `${l.title} &#8599;`
     dropDiv.appendChild(link)
   })
-  
+
   artifactList.appendChild(dropDiv)
 })
 
@@ -269,7 +281,7 @@ const collaborationVerse = `
 
 const makeMagicDiv = (artifactName) => (lineText) => {
   const magic = document.createElement("span")
-  magic.innerText = lineText 
+  magic.innerText = lineText
   magic.classList.add("magic")
 
   const dropDiv = document.getElementById(`drop_${artifactName}`)

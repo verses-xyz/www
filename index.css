@@ -18,6 +18,25 @@ html {
   font-size: 1rem;
 }
 
+#telescope .details ol, #telescope .details li {
+  list-style-type: decimal; 
+  list-style-position: inside; 
+  display: block;
+}
+
+#telescope .details li {
+  display: list-item;
+}
+
+.drop > #telescope .expanded > span > h3 {
+  display: block;
+  margin: 0 0 0.5em;
+}
+
+.drop > #telescope > p {
+  margin: 0.5em 0;
+}
+
 body {
   font-family: "EB Garamond", serif;
   font-size: 1.4rem;
@@ -88,7 +107,7 @@ ol {
 #artifact-list {
   list-style: none;
   padding: 0;
-  margin: 2em 0 0 -1em;
+  margin: 1em 0 0 -1em;
 }
 
 .date, .socials, a {
@@ -97,7 +116,7 @@ ol {
 }
 
 .drop {
-  margin: 3em 0;
+  margin: 0;
   padding: 1em;
   border: 1px solid #00000000;
   transition: border 2s ease;
