@@ -18,9 +18,10 @@ html {
   font-size: 1rem;
 }
 
-#telescope .details ol, #telescope .details li {
-  list-style-type: decimal; 
-  list-style-position: inside; 
+#telescope .details ol,
+#telescope .details li {
+  list-style-type: decimal;
+  list-style-position: inside;
   display: block;
 }
 
@@ -41,11 +42,11 @@ body {
   font-family: "EB Garamond", serif;
   font-size: 1.4rem;
   margin: 0;
-  color: #0E202F;
+  color: #0e202f;
 }
 
 a {
-  color: #0E202F;
+  color: #0e202f;
 }
 
 #main-content {
@@ -64,6 +65,15 @@ ol {
   height: 100px;
   width: 100px;
   margin: 2em 0;
+  image-rendering: -moz-crisp-edges;
+  /* Firefox */
+  image-rendering: -o-crisp-edges;
+  /* Opera */
+  image-rendering: -webkit-optimize-contrast;
+  /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE (non-standard property) */
 }
 
 .two-pane {
@@ -80,8 +90,12 @@ ol {
 }
 
 @keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #canvas {
@@ -110,7 +124,9 @@ ol {
   margin: 1em 0 0 -1em;
 }
 
-.date, .socials, a {
+.date,
+.socials,
+a {
   font-family: Roboto Mono, monospace;
   font-size: 1rem;
 }
@@ -154,7 +170,7 @@ ol {
       rgba(255, 255, 255, 0.2) 50%,
       #0000 66%
     )
-    #A9BAA4;
+    #a9baa4;
   background-size: 200% auto;
   background-clip: text;
   text-fill-color: transparent;
@@ -165,7 +181,7 @@ ol {
 }
 
 .drop-highlight {
-  border: 1px solid #0E202F; 
+  border: 1px solid #0e202f;
 }
 
 .mobile-only {
@@ -209,5 +225,3 @@ ol {
     overflow-y: visible;
   }
 }
-
-
