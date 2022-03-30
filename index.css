@@ -68,14 +68,16 @@ ol {
 
 .two-pane {
   display: flex;
-  max-height: 100vh;
+  height: 100vh;
   position: relative;
 }
 
 #context-pane {
+  box-sizing: border-box;
   flex: 0 0 50%;
   max-height: 100vh;
   overflow-y: auto;
+  padding: 10vh 6em 10vh 4em;
   border-left: 2px solid rgba(169, 186, 164, 0.2);
 }
 
@@ -95,13 +97,12 @@ ol {
 
 .socials {
   opacity: 0.5;
-  padding: 0;
+  padding: 2em 0;
   list-style: none;
 }
 
 #contexts {
   z-index: 1;
-  padding: 10vh 6em 10vh 4em;
 }
 
 #artifact-list {
@@ -119,7 +120,7 @@ ol {
   margin: 0;
   padding: 1em;
   border: 1px solid #00000000;
-  transition: border 2s ease;
+  transition: border 0.5s ease;
   border-radius: 5px;
 }
 
@@ -166,23 +167,31 @@ ol {
 
 .drop-highlight {
   border: 1px solid #0E202F; 
+  transition: border 0s ease;
 }
 
 .mobile-only {
   display: none;
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (orientation: portrait) {
   .two-pane {
-    flex-direction: column;
+    display: block;
   }
 
   #canvas {
     display: none;
   }
 
-  #main-content {
+  #main-content, #context-pane {
     margin: 5vh 0;
+    max-height: none;
+    overflow-y: none;
+  }
+
+  #main-logo {
+    width: 150px;
+    height: 150px;
   }
 
   .mobile-only {
@@ -192,21 +201,19 @@ ol {
   .desktop-only {
     display: none;
   }
+
+  .socials {
+    margin-top: 5em;
+  }
+
+  .drop {
+    margin: 2em 0;
+  }
 }
 
-@media only screen and (max-width: 1200px) {
-  #contexts {
+@media all and (max-width: 1200px) {
+  #main-content, #context-pane {
     padding: 0 2em;
-    margin: 0 0;
-  }
-
-  #main-content {
-    padding: 0 2em;
-  }
-
-  #context-pane {
-    max-height: unset;
-    overflow-y: visible;
   }
 }
 

@@ -92,24 +92,29 @@ function gameloop() {
   }
 }
 
+var windowWidth = 0
 function redrawCanvas() {
-  w = Math.ceil(c.offsetWidth)
-  ctx.canvas.width = w
-  h = Math.ceil(c.offsetHeight)
-  ctx.canvas.height = h
+  if (window.innerWidth != windowWidth) {
+    windowWidth = window.innerWidth
 
-  if (animationFrameHandle) {
-    cancelAnimationFrame(animationFrameHandle)
-  }
+    w = Math.ceil(c.offsetWidth)
+    ctx.canvas.width = w
+    h = Math.ceil(c.offsetHeight)
+    ctx.canvas.height = h
 
-  cells = []
-  for (let y = 0; y < Math.ceil(h / cellSize); y++) {
-    for (let x = 0; x < Math.ceil(w / cellSize); x++) {
-      cells.push(new Cell(x, y))
+    if (animationFrameHandle) {
+      cancelAnimationFrame(animationFrameHandle)
     }
-  }
 
-  animationFrameHandle = window.requestAnimationFrame(gameloop)
+    cells = []
+    for (let y = 0; y < Math.ceil(h / cellSize); y++) {
+      for (let x = 0; x < Math.ceil(w / cellSize); x++) {
+        cells.push(new Cell(x, y))
+      }
+    }
+
+    animationFrameHandle = window.requestAnimationFrame(gameloop)
+  }
 }
 
 function manuallySpawnCell(x, y) {
