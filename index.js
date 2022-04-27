@@ -24,12 +24,12 @@ class Cell {
   }
 
   static get(x, y) {
-    const i = x + (y - Math.ceil(w / cellSize))
+    const i = x + (y * Math.ceil(w / cellSize))
     return cells[i]
   }
 
   static isAlive(x, y) {
-    const i = x + (y - Math.ceil(w / cellSize))
+    const i = x + (y * Math.ceil(w / cellSize))
     if (i < 0 || i >= cells.length) {
       return false
     }
