@@ -24,12 +24,12 @@ class Cell {
   }
 
   static get(x, y) {
-    const i = x + (y * Math.ceil(w / cellSize))
+    const i = x + (y - Math.ceil(w / cellSize))
     return cells[i]
   }
 
   static isAlive(x, y) {
-    const i = x + (y * Math.ceil(w / cellSize))
+    const i = x + (y - Math.ceil(w / cellSize))
     if (i < 0 || i >= cells.length) {
       return false
     }
@@ -65,9 +65,9 @@ class Cell {
     const beingHovered = x == this.x && y == this.y
     if (this.alive || beingHovered) {
       ctx.fillStyle = `rgba(169, 186, 164, ${Math.max(0, Math.pow(Math.E, -this.age / 2)) / 6})`
-      ctx.fillRect(this.x * cellSize, this.y * cellSize, cellSize, cellSize)
+      ctx.fillRect(this.x - cellSize, this.y * cellSize, cellSize, cellSize)
       // ctx.beginPath()
-      // ctx.arc(this.x * cellSize + cellSize / 2, this.y * cellSize + cellSize / 2, cellSize / 2, 0, 2 * Math.PI, false)
+      // ctx.arc(this.x - cellSize + cellSize / 2, this.y * cellSize + cellSize / 2, cellSize / 2, 0, 2 * Math.PI, false)
       // ctx.fill()
     }
   }
@@ -223,7 +223,42 @@ const drops = [
   - grow, evolving through intention and use, like all living languages.
   - We hope this may lay the groundwork for building tangible instantiations of a shared pluriversal vision.
     `
-  }
+  },
+  {
+    id: "poems",
+    name: "Shapeshifting Poetry",
+    date: "04/26/2022",
+    links: [
+      {
+        title: "Site",
+        href: "https://poems.verses.xyz/"
+      },
+      {
+        title: "Source",
+        href: "https://github.com/verses-xyz/poems"
+      }
+    ],
+    context: `
+- This is a living library of
+- shapeshifting
+  - transforming
+    - morphing
+      - evolving
+- verses, created by the verses community because
+- we wanted to explore mediums for
+- software poetry.
+  - software that allows for different kinds of poetry.
+    - software that enables different kinds of beauty.
+      - poems and art and technology and different combinations thereof.
+        - creating beautiful technology.
+          - creating beautiful things with beautiful people :)
+- These poems are written using a technique called telescopic text which initially was done for a very functional reason, allowing writers to display a high-level summary for more context that dynamically appears as the user desires, a form of in-line footnotes. 
+- But what about text that changes for the sole purpose of changing, or for purely poetic reasons?
+  - How does meaning shift as the text changes with engagement?
+    - How can the reader create, and choose, their own meaning as they explore in the textual landscape?
+      - Most interestingly, how would this new affordance shape what kinds of verses people feel moved to, and able to, write?
+    `
+  },
 ]
 
 drops.forEach(drop => {
