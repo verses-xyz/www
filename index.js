@@ -65,7 +65,7 @@ class Cell {
     const beingHovered = x == this.x && y == this.y
     if (this.alive || beingHovered) {
       ctx.fillStyle = `rgba(169, 186, 164, ${Math.max(0, Math.pow(Math.E, -this.age / 2)) / 6})`
-      ctx.fillRect(this.x - cellSize, this.y * cellSize, cellSize, cellSize)
+      ctx.fillRect(this.x * cellSize, this.y * cellSize, cellSize, cellSize)
       // ctx.beginPath()
       // ctx.arc(this.x - cellSize + cellSize / 2, this.y * cellSize + cellSize / 2, cellSize / 2, 0, 2 * Math.PI, false)
       // ctx.fill()
