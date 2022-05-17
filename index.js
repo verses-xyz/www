@@ -293,12 +293,9 @@ ${drop.context.replace(/- /g, '  - ')}
 // render main content
 const aboutVerse = `
 - *Verses* aims to
-- be a persistent institution dedicated to articulating visions for a flourishing future.
-  - contribute, in community and in the ecosystem, to a clearer set of technologies, infrastructures, institutions, and processes that realize the ethic of the pluriverse in the concrete and material.
-- As an organization, we are an emergent group of loosely associated folks collaborating on planting
-- seeds
-  - seeds (language, technology, and infrastructure)
-- towards an interdependent cyberspace.
+- be a persistent institution dedicated to articulating visions for a flourishing collectie future.
+  - contribute to a clearer set of technologies, infrastructures, institutions, and processes that realize the ethic of the pluriverse in the concrete and material.
+- We build together towards a cyberspace that is interdependent.
 - As such, we follow a method of loose collaboration which we call
 - "stone soup".
   - "stone soup". Rather than being formally led by a fixed group, we find and engage contributors for projects as they evolve from idea to completion, so that individuals with different talents can bring their contributions to the table.
