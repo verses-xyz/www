@@ -293,7 +293,7 @@ ${drop.context.replace(/- /g, '  - ')}
 // render main content
 const aboutVerse = `
 - *Verses* aims to
-- be a persistent institution dedicated to articulating visions for a flourishing collectie future.
+- be a persistent institution dedicated to articulating visions for a flourishing collective future.
   - contribute to a clearer set of technologies, infrastructures, institutions, and processes that realize the ethic of the pluriverse in the concrete and material.
 - We build together towards a cyberspace that is interdependent.
 - As such, we follow a method of loose collaboration which we call
