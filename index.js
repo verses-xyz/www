@@ -259,6 +259,35 @@ const drops = [
       - Most interestingly, how would this new affordance shape what kinds of verses people feel moved to, and able to, write?
     `
   },
+  {
+    id: "constitutions",
+    name: "Constitutions of Web3",
+    date: "06/11/2022",
+    links: [
+      {
+        title: "Site",
+        href: "https://constitutions.metagov.org/"
+      },
+      {
+        title: "Source",
+        href: "https://github.com/verses-xyz/constitutions"
+      }
+    ],
+    context: `
+- Although smart contracts are promising new tools for governance, they alone cannot govern communities; traditional constitutions and declarations of rights are still crucial for good governance.
+- In collaboration with Metagov, this artifact is an
+- essay,
+  - analysis of constitutional documents which examines professed rights and values and places DAO constitutions in context wtih digital constitutions more broadly,
+- dataset,
+  - a dataset of various DAO constitutions,
+- guide,
+  - guide which contains recommendations for beginning to draft constitutions,
+- and template.
+  - and 
+    - and, when combined with the guide and our data set of constitutions, will serve as a
+  - template for creating constitutions.
+    `
+  }
 ]
 
 drops.forEach(drop => {
